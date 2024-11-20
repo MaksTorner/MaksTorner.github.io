@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="login-form">
+        <h2>Admin Login</h2>
+        <input type="email" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="login()">Login</button>
+    </div>
+    <div id="admin-panel" style="display: none;">
+        <h2>Add Project</h2>
+        <input type="text" id="title" placeholder="Title">
+        <textarea id="description" placeholder="Description"></textarea>
+        <input type="file" id="media">
+        <select id="type">
+            <option value="image">Image</option>
+            <option value="video">Video</option>
+        </select>
+        <button onclick="addProject()">Add Project</button>
+    </div>
+    <script src="firebase-app.js"></script>
+    <script src="firebase-auth.js"></script>
+    <script src="firebase-database.js"></script>
+    <script src="firebase-storage.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>
