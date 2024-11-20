@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Min Portfolio</title>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-storage.js"></script>
+  <script src="firebase-config.js"></script>
+</head>
+<body>
+  <h1>Min Portfolio</h1>
+
+  <button id="loginButton">Logga in med Google</button>
+  <button id="logoutButton" style="display:none;">Logga ut</button>
+
+  <section id="projectForm" style="display:none;">
+    <h2>Lägg till nytt projekt</h2>
+    <input type="text" id="projectTitle" placeholder="Projektets titel">
+    <textarea id="projectDescription" placeholder="Projektbeskrivning"></textarea>
+    <input type="file" id="projectMedia" accept="image/*, video/*">
+    <button id="submitProjectButton">Ladda upp projekt</button>
+  </section>
+
+  <section id="projects">
+    <h2>Projekt</h2>
+    <div id="projectList"></div>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
