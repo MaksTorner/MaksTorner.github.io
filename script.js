@@ -46,3 +46,27 @@ particlesJS('particles-js', {
     },
     retina_detect: true
 });
+
+fetch("projects.json")
+  .then(response => response.json())
+  .then(projects => {
+    const projectContainer = document.getElementById("projects");
+    projects.forEach(project => {
+      const projectElement = document.createElement("div");
+      projectElement.classList.add("project-card");
+
+      let mediaContent = "";
+      if (project.type === "video") {
+        mediaContent = `<video controls src="${project.media}" width="300"></video>`;
+      } else if (project.type === "image") {
+        mediaContent = `<img src="${project.media}" alt="${project.title}" width="300"/>`;
+      }
+
+      projectElement.innerHTML = `
+        <h3>${project.title}</h3>
+        ${mediaContent}
+        <p>${project.description}</p>
+      `;
+      projectContainer.appendChild(projectElement);
+    });
+  });
